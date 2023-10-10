@@ -1,0 +1,78 @@
+   #sidebar {
+       color: #f8f9fa;
+   }
+
+   .logout-button {
+       color: #ffffff;
+   }
+
+   @media (max-width: 576px) {
+       .card {
+           margin: 10px;
+       }
+   }
+
+   @media (max-width: 768px) {
+       #coursesTitle {
+           font-size: 15px;
+       }
+
+       #semesterTitle {
+           font-size: 14px;
+       }
+
+       #linkCarrier {
+           flex-wrap: wrap;
+           align-items: center;
+           justify-content: center;
+       }
+
+       #link {
+           font-size: 10px;
+       }
+
+       /* #linkbtn {
+                padding: 200px;
+            } */
+
+       #linkList {
+           margin: 5px;
+       }
+
+       #courses {
+           margin-top: 25px;
+       }
+
+       #h3 {
+           font-size: 12px;
+       }
+
+       #h1 {
+           font-size: 20px;
+       }
+
+       #paragraph {
+           font-size: 9px;
+       }
+
+       #nav {
+           font-weight: 200;
+       }
+   }
+
+   /* @media (max-width: 768px) {
+            #sidebar {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 250px;
+                height: 100%;
+                z-index: 1;
+                background-color: #fff;
+                transition: left 0.3s;
+            }
+
+            #sidebar.show {
+                left: 0;
+            }
+        } */
