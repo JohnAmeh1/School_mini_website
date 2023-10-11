@@ -3,17 +3,17 @@
         <li class="nav-item m-3">
             <button type="btn" class="btn-secondary p-4 border-0 d-flex rounded text-dark"><a href="#add" class="nav-link" data-bs-toggle="tab">Add Courses</a></button>
         </li>
-
         <?php
+        $counter = 0; // Initialize a counter variable
         foreach ($me as $course) {
+            $counter++; // Increment the counter
         ?>
             <li class="nav-item m-3">
-                <button type="button" class="btn-secondary p-4 border-0 d-flex rounded text-dark">
-                    <a href="#testing" class="nav-link" >
-                        
-                        <h1 id="h1" class="text-uppercase"><?= $course["courseT"] ?></h1>
-                        <h3 id="h3" class="text-uppercase"><?= $course["courseName"] ?></h3>
-                        <p id="paragraph"><?= $course["courseDescription"] ?></p>
+                <button type="button" class="btn-secondary p-2 border-0 d-flex rounded text-dark">
+                    <a href="#testing" class="nav-link" data-bs-toggle="tab">
+
+                        <h5 id="h1" class="text-uppercase"><?= $course["courseT"] ?></h1>
+                            <h6 id="h3" class="text-uppercase"><?= $course["courseName"] ?></h3>
                     </a>
                 </button>
             </li>
@@ -22,20 +22,22 @@
         ?>
     </ul>
 </div>
-<!-- <div class="tab-pane container fade" id="testing">
-    <div name="course-details" class="card d-flex p-2 m-5 text-dark bg-light border">
-        <button type="button" class="btn-close" aria-label="Close" onclick="closeTab('#testing')"></button>
-        
-        // foreach ($me as $course) {
-        
-            <h1 id="h1" class="text-uppercase">//$course["courseT"] </h1>
-            <h3 id="h3" class="text-uppercase"> //$course["courseName"] </h3>
-            <p id="paragraph"> //$course["courseDescription"]</p>
-    
-        //}
-    
-    </div>
-</div> -->
+<div class="tab-pane container fade" id="testing">
+    <?php
+    $counter = 0; // Reset the counter
+    foreach ($me as $course) {
+        $counter++; // Increment the counter
+    ?>
+        <div name="course-details" class="card d-flex p-2 m-3 text-dark bg-light border">
+            <button type="button" class="btn-close" aria-label="Close" onclick="closeTab('#testing')"></button>
+
+            <p id="paragraph"><?= $course["courseDescription"] ?></p>
+
+        </div>
+    <?php
+    }
+    ?>
+</div>
 
 <div class="tab-pane container fade text-dark" id="add">
     <div name="course-details" class="card d-flex p-2 m-5 text-dark bg-light border rounded">
@@ -53,6 +55,7 @@
             <div class="form-floating mb-3">
                 <textarea class="form-control" rows="5" name="courseDescription" required></textarea>
                 <label for="courseDescription">Course Description</label>
+                <small class="text-dark d-block" style="font-size: 12px;">Not more than 280 characters.</small>
             </div>
             <div class="form-check mb-3" required>
                 <h6>Select A Level</h6>
